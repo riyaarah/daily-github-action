@@ -1,0 +1,19 @@
+name: CI
+
+# Triggers
+on: 
+  push:
+    branches:
+      - main           # Runs whenever you push to main
+  workflow_dispatch:    # Allows manual triggering from GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Hello Message
+        run: echo "Hello, GitHub Actions! Workflow is running successfully."
